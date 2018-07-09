@@ -1,0 +1,5 @@
+feedback:
+  script:
+  - run_kate . cspark/pre1-maths:production
+  tags:
+  - kate2.0
