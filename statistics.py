@@ -1,6 +1,9 @@
 """
 This file contains a set of functions to practice your
-statistics skills
+statistics skills.
+
+It needs to be completed with "vanilla" Python, without
+help from any library.
 """
 
 

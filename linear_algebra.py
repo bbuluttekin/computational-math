@@ -1,6 +1,9 @@
 """
 This file contains a set of functions to practice your
-linear algebra skills
+linear algebra skills. 
+
+It needs to be completed with "vanilla" Python, without
+help from any library.
 """
 
 
