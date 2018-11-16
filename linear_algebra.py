@@ -21,7 +21,7 @@ def gradient(w1, w2, x):
     :rtype: float, float
     """
 
-    raise NotImplementedError
+    return (2 * w1 * x[0], w2)
 
 
 def metrics(u, v):
@@ -40,7 +40,13 @@ def metrics(u, v):
     :raise ValueError:
     """
 
-    raise NotImplementedError
+    if len(u) != len(v):
+        raise ValueError("Vector dimensions not compatible!")
+    l_1 = [i_u - i_v for i_u, i_v in zip(u, v)]
+    l_1 = sum(l_1)
+    l_2 = [(i_u - i_v)**2 for i_u, i_v in zip(u, v)]
+    l_2 = sum(l_2) ** 0.5
+    return l_1, l_2
 
 
 def list_mul(u, v):
@@ -60,7 +66,11 @@ def list_mul(u, v):
     :raise ValueError:
     """
 
-    raise NotImplementedError
+    if len(u) != len(v):
+        raise ValueError("Vector dimensions not compatible!")
+    e_sum = [i_u + i_v for i_u, i_v in zip(u, v)]
+    e_prod = [i_u * i_v for i_u, i_v in zip(u, v)]
+    return e_sum, e_prod, float(sum(e_prod))
 
 
 def matrix_mul(A, B):
@@ -83,6 +93,11 @@ def matrix_mul(A, B):
     :raise ValueError:
     """
 
-    raise NotImplementedError
-
-
+    if len(A[0]) != len(B):
+        raise ValueError("Matrix dimensions not compatible!")
+    C = [[0 for i in range(len(B[0]))] for j in range(len(A))]
+    for i in range(len(A)):
+        for j in range(len(B)):
+            for k in range(len(A[0])):
+                C[i][j] += A[i][k] * B[k][j]
+    return C
