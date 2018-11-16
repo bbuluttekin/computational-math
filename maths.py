@@ -19,7 +19,7 @@ def derivative(w1, w2, x):
     :rtype: float
     """
 
-    return float(3 * w1 * x ** 3 + w2)
+    return float((3 * w1 * (x ** 2)) + w2)
 
 
 def abs_dist(x):
