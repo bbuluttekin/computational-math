@@ -66,4 +66,4 @@ def bin_cdf(n, p, x):
 
     if x > n:
         raise ValueError("x cant be higher than n")
-    return sum([bin_dist(n, p, i) for i in range(x)])
+    return sum([bin_dist(n, p, i) for i in range(x + 1)])
