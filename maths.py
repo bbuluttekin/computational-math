@@ -19,7 +19,7 @@ def derivative(w1, w2, x):
     :rtype: float
     """
 
-    raise NotImplementedError
+    return float(3 * w1 * x ** 3 + w2)
 
 
 def abs_dist(x):
@@ -31,7 +31,9 @@ def abs_dist(x):
     :rtype: float
     """
 
-    raise NotImplementedError
+    if x < 0:
+        x = -x
+    return float(x)
 
 
 def fact(x):
@@ -46,7 +48,12 @@ def fact(x):
     :raise ValueError:
     """
 
-    raise NotImplementedError
+    if x < 0:
+        raise ValueError("Number cannot be negative!")
+    x_fact = 1
+    for i in range(1, x + 1):
+        x_fact *= i
+    return float(x_fact)
 
 
 def combination(n, r):
@@ -61,6 +68,7 @@ def combination(n, r):
     :rtype: integer
     """
 
-    raise NotImplementedError
-
-
+    x = fact(n)
+    x_n = fact(n - r)
+    x_r = fact(r)
+    return int(x / (x_n * x_r))
