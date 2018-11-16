@@ -1,7 +1,6 @@
 """
 This file contains a set of functions to practice your
-linear algebra skills. 
-
+linear algebra skills.
 It needs to be completed with "vanilla" Python, without
 help from any library.
 """
@@ -95,9 +94,12 @@ def matrix_mul(A, B):
 
     if len(A[0]) != len(B):
         raise ValueError("Matrix dimensions not compatible!")
-    C = [[0 for i in range(len(B[0]))] for j in range(len(A))]
-    for i in range(len(A)):
-        for j in range(len(B)):
-            for k in range(len(A[0])):
-                C[i][j] += A[i][k] * B[k][j]
-    return C
+    m_m = len(A)
+    n_m = len(A[0])
+    r_m = len(B[0])
+    m_c = [[0 for i in range(r_m)] for j in range(m_m)]
+    for i in range(m_m):
+        for j in range(r_m):
+            for k in range(n_m):
+                m_c[i][j] += A[i][k] * B[k][j]
+    return m_c
