@@ -5,6 +5,7 @@ probabilities skills.
 It needs to be completed with "vanilla" Python, without
 help from any library -- except for the bin_dist function.
 """
+from scipy import special
 
 
 def head_tails(p, n):
@@ -19,7 +20,7 @@ def head_tails(p, n):
     :rtype: float
     """
 
-    raise NotImplementedError
+    return p ** n
 
 
 def bin_dist(n, p, x):
@@ -41,7 +42,9 @@ def bin_dist(n, p, x):
     :raise ValueError: if x > n
     """
 
-    raise NotImplementedError
+    if x > n:
+        raise ValueError("x cant be higher than n")
+    return special.comb(n, x) * (p ** x) * (1 - p) ** (n - x)
 
 
 def bin_cdf(n, p, x):
@@ -61,6 +64,6 @@ def bin_cdf(n, p, x):
     :raise ValueError: if x > n
     """
 
-    raise NotImplementedError
-
-
+    if x > n:
+        raise ValueError("x cant be higher than n")
+    return sum([bin_dist(n, p, i) for i in range(x)])

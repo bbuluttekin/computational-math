@@ -63,8 +63,8 @@ def remove_outliers(data):
         raise ValueError("List cannot be empty!")
     new_list = []
     mean = calculate_mean(data)
-    sd = calculate_standard_deviation(data)
+    s_d = calculate_standard_deviation(data)
     for i in data:
-        if i >= (mean - 2 * sd) and i <= (mean + 2 * sd):
+        if i >= (mean - 2 * s_d) and i <= (mean + 2 * s_d):
             new_list.append(i)
     return new_list
