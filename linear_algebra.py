@@ -41,7 +41,7 @@ def metrics(u, v):
 
     if len(u) != len(v):
         raise ValueError("Vector dimensions not compatible!")
-    l_1 = [i_u - i_v for i_u, i_v in zip(u, v)]
+    l_1 = [abs(i_u - i_v) for i_u, i_v in zip(u, v)]
     l_1 = sum(l_1)
     l_2 = [(i_u - i_v)**2 for i_u, i_v in zip(u, v)]
     l_2 = sum(l_2) ** 0.5
