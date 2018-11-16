@@ -19,7 +19,9 @@ def calculate_mean(data):
     :raise ValueError:
     """
 
-    raise NotImplementedError
+    if len(data) == 0:
+        raise ValueError("List can not be empty!")
+    return sum(data) / len(data)
 
 
 def calculate_standard_deviation(data):
@@ -34,7 +36,9 @@ def calculate_standard_deviation(data):
     :raise ValueError:
     """
 
-    raise NotImplementedError
+    if len(data) == 0:
+        raise ValueError("List cannot be empty!")
+    return (sum([(i - calculate_mean(data)) ** 2 for i in data]) / len(data)) ** 0.5
 
 
 def remove_outliers(data):
@@ -54,6 +58,7 @@ def remove_outliers(data):
     :raise ValueError:
     """
 
-    raise NotImplementedError
-
-
+    if len(data) == 0:
+        raise ValueError("List cannot be empty!")
+    return [i for i in data if i >= (calculate_mean(data) - 2 * calculate_standard_deviation(
+        data)) and i <= (calculate_mean(data) + 2 * calculate_standard_deviation(data))]
