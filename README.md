@@ -16,4 +16,7 @@ These micro modules are created as part of the data science challenge for [HSBC 
 - fact: Returns the factorial of the value x.
 - combination: Given n total number of items, what is the number of possible ways to choose r items from it.
 ### Probabilities
+- head_tails: Given a coin that have probability p of giving a heads in each toss independently, returns the probability of having n heads consecutively in a row.
+- bin_dist: Given a number of trials, p the probability of success, returns the probability of having x successes.
+- bin_cdf: Given number of trials, p the probability of success, returns the probability of having less than or equal to x successes.
 ### Statistics
