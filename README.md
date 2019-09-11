@@ -20,3 +20,6 @@ These micro modules are created as part of the data science challenge for [HSBC 
 - bin_dist: Given a number of trials, p the probability of success, returns the probability of having x successes.
 - bin_cdf: Given number of trials, p the probability of success, returns the probability of having less than or equal to x successes.
 ### Statistics
+- calculate_mean: Returns the mean of the python list.
+- calculate_standard_deviation: Returns the standard deviation of the python list.
+- remove_outliers: Given a list of numbers, find the outliers and return a list all the data points except the outliers. It consider point as outlier if it lies above two standard deviation.
